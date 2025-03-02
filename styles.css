@@ -991,4 +991,38 @@ input, textarea {
     transform: translateY(-5px);
     box-shadow: 0 8px 30px var(--card-shadow);
     border-color: var(--accent-light);
+}
+
+/* Add to your existing button styles */
+.submit-btn {
+    position: relative;
+    min-width: 200px;
+}
+
+.submit-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.btn-loading {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Optional loading animation */
+@keyframes spin {
+    to { transform: translateX(-50%) rotate(360deg); }
+}
+
+.btn-loading::after {
+    content: '';
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    border: 2px solid transparent;
+    border-top-color: currentColor;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+    margin-left: 0.5em;
 } 
